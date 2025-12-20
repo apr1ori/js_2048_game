@@ -13,11 +13,6 @@ const messageStart = document.querySelector('.message-start');
 const messageWin = document.querySelector('.message-win');
 const messageLose = document.querySelector('.message-lose');
 
-window.addEventListener('load', () => {
-  game.startNumbers();
-  actualise(game.board);
-});
-
 buttonStart.addEventListener('click', (e) => {
   e.target.textContent = 'Restart';
   game.status = 'playing';
