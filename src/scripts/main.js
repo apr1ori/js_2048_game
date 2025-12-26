@@ -13,15 +13,17 @@ const messageStart = document.querySelector('.message-start');
 const messageWin = document.querySelector('.message-win');
 const messageLose = document.querySelector('.message-lose');
 
+
+
 buttonStart.addEventListener('click', (e) => {
   e.target.textContent = 'Restart';
   game.status = 'playing';
   buttonStart.className = 'button restart';
 
   if (game.status === 'idle') {
-    game.startNumbers();
+
     game.status = 'playing';
-    actualise(game.board);
+    updateBoard(game.board);
     updateMessages();
 
     return;
@@ -32,7 +34,7 @@ buttonStart.addEventListener('click', (e) => {
     game.restart();
     game.startNumbers();
     game.status = 'playing';
-    actualise(game.board);
+    updateBoard(game.board);
   }
 });
 
@@ -59,7 +61,7 @@ function updateMessages() {
   }
 }
 
-function actualise(board) {
+function updateBoard(board) {
   for (let row = 0; row < 4; row++) {
     for (let col = 0; col < 4; col++) {
       Array.from(rows[row].children)[col].textContent = board[row][col];
@@ -125,5 +127,5 @@ document.addEventListener('keydown', (e) => {
     game.addNumbers(game.board);
   }
 
-  actualise(game.board);
+  updateBoard(game.board);
 });
