@@ -279,6 +279,7 @@ class Game {
   /**
    * Resets the game.
    */
+
   restart() {
     this.score = 0;
 
